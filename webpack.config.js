@@ -18,6 +18,7 @@ module.exports = {
     alias: {
       '@components': path.resolve('src/components'),
       '@pages': path.resolve('src/pages'),
+      '@layouts': path.resolve('src/layouts'),
     },
   },
 
