@@ -25,6 +25,7 @@
     "start": "webpack-dev-server --config webpack.config.js --hot"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "vue-router": "^3.4.3"
   }
 }
