@@ -1,10 +1,11 @@
 <template lang="pug">
-  .product-item
-    .product-item__img
-      img(:src="image")
-    .product-item__name {{ name }}
-    .product-item__price {{ priceFormatted }}
-    .product-item__info
+  .products-item.has-text-centered
+    .products-item__img.mb-4(
+      :style="`background-image: url(${image})`"
+    )
+    .products-item__name.is-size-5.mb-4 {{ name }}
+    .products-item__price.is-size-4.has-text-weight-bold {{ priceFormatted }}
+    .products-item__info.is-size-6.has-text-weight-medium.has-text-grey
       span {{ basePrice.price }} / 
       span {{ measurement }}
 
@@ -33,3 +34,13 @@ export default {
   },
 }
 </script>
+
+<style lang="sass" scoped>
+.products-item
+  &__img
+    width: 100%
+    padding-bottom: 80%
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+</style>

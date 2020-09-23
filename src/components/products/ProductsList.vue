@@ -1,12 +1,12 @@
 <template lang="pug">
-  .products
-    div(v-if="products.length > 0")
-      products-filters(
-        v-bind.sync="priceMinMax"
-        :price-range.sync="priceRange"
-        @property-toogled="filterByProperties($event)"
-      )
+  .products.columns
+    products-filters.products__aside.column.is-12-mobile.is-2(
+      v-bind.sync="priceMinMax"
+      :price-range.sync="priceRange"
+      @property-toogled="filterByProperties($event)"
+    )
 
+    .products__body.column.is-12-mobile.is-10
       products-sort(v-bind.sync="sortOptions")
 
       .products__list
@@ -95,5 +95,6 @@ export default {
   padding: 2rem
   &__list
     display: grid
-    grid-template-columns: repeat(auto-fill, 25%)
+    grid-template-columns: repeat(auto-fit, calc(25% - 1rem))
+    grid-gap: 3rem 1rem
 </style>
