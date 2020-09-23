@@ -1,14 +1,25 @@
 {
   "name": "viani-productlisting",
   "version": "1.0.0",
-  "license": "proprietary",
   "private": true,
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.js --hot"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "2",
+    "axios": "^0.20.0",
+    "buefy": "^0.9.3",
+    "vue-router": "^3.4.3"
+  },
   "devDependencies": {
     "@vue/cli-plugin-router": "^4.5.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.4.1",
+    "node-sass": "^4.14.1",
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.0.0",
     "sass": "^1.26.11",
@@ -21,11 +32,5 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
-  "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js --hot"
-  },
-  "dependencies": {
-    "axios": "^0.20.0",
-    "vue-router": "^3.4.3"
-  }
+  "license": "proprietary"
 }

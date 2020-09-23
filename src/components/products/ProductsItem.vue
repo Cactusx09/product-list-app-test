@@ -5,8 +5,7 @@
     .product-item__name {{ name }}
     .product-item__price {{ priceFormatted }}
     .product-item__info
-      span {{ basePrice.price }}
-      |  / 
+      span {{ basePrice.price }} / 
       span {{ measurement }}
 
 </template>
