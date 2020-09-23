@@ -1,11 +1,13 @@
 <template lang="pug">
   div
-    button(
+    div(
       v-for="(isSelected, name) in buttons"
       :key="name"
-      @click="propertyToogled(name)"
-      :class="{ 'is-selected':  isSelected }"
-    ) {{ name }}
+    )
+      b-checkbox(
+        :value="isSelected"
+        @input="propertyToogled(name)"
+      ) {{ name }}
 
     b-slider(
       :value="priceValue"
@@ -62,10 +64,3 @@ export default {
   },
 }
 </script>
-
-<style lang="sass" scoped>
-button
-  &.is-selected
-    background: #ccc
-
-</style>

@@ -1,25 +1,23 @@
 <template lang="pug">
-  .products
-    b-field
-      b-select(
-        :value="by"
+  .products-sort.columns
+    b-field.column.is-4.is-offset-8.has-addons
+      .control(v-if="by")
+        b-button.control(@click="$emit('update:by', '')")
+          b-icon(icon="times")
+          
+      
+      b-select.products-sort__select(
+        :value="by || null"
         @input="$emit('update:by', $event)"
         placeholder="Choose sort"
+        expanded
       )
         option(value="name") Name
         option(value="price") Price
 
-      div(v-if="by")
-        b-button(
-          @click="$emit('update:order', order === 'ASC' ? 'DESC' : 'ASC')"
-        ) 
-          b-icon(
-            :icon="iconName"
-          )
-
-        b-button(@click="$emit('update:by', '')")
-          b-icon(icon="times")
-
+      .control(v-if="by")
+        b-button(@click="$emit('update:order', order === 'ASC' ? 'DESC' : 'ASC')") 
+          b-icon(:icon="iconName")
 </template>
 
 <script>
@@ -44,7 +42,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass" scoped>
-
-</style>

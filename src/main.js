@@ -2,12 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
-import { Slider, Select, Icon } from 'buefy'
-import 'buefy/dist/buefy.css'
-Vue.use(Slider)
-Vue.use(Select)
-Vue.use(Icon)
-
 import App from './App.vue'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -34,7 +28,7 @@ Vue.use(Buefy, {
   defaultIconComponent: 'font-awesome-icon',
   defaultIconPack: 'fas',
 });
-
+import 'buefy/dist/buefy.css'
 
 import './fonts/fonts.css'
 import './styles/main.scss'
