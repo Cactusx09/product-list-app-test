@@ -18,6 +18,7 @@ module.exports = {
     alias: {
       '@components': path.resolve('src/components'),
       '@pages': path.resolve('src/pages'),
+      '@layouts': path.resolve('src/layouts'),
     },
   },
 
@@ -57,6 +58,21 @@ module.exports = {
         ],
       },
       {
+        test: /\.sass$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                indentedSyntax: true
+              }
+            }
+          }
+        ],
+      },
+      {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           'file-loader',
@@ -70,7 +86,7 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
       },
       {
         test: /\.pug$/,
